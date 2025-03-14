@@ -1,0 +1,5 @@
+page_name_loc = "//*[@class='caption' and normalize-space(text())='Вход в информационную систему']"
+check_box_loc = "//*[@for='сredentialsLoginSwitch']"
+enter_button_loc = "//*[@class='submit ng-star-inserted']"
+login_fild_loc = "//*[@placeholder='Логин']"
+password_fild_loc = "//*[@placeholder='Пароль']"
