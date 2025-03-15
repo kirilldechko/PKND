@@ -73,7 +73,7 @@ class KnmAndPmPage(BasePage):
         except AssertionError:
             raise AssertionError(f"Ошибка при заполнении поля {date_fild}")
 
-    @allure.step("Выбрать дату")
+    @allure.step("Выбрать время")
     def send_time(self, time_fild_name, time, period=None):
         time_fild = self.find_elem(knm_and_pn_page_loc.find_time_fild(time_fild_name))
         time_fild.fill(time)
