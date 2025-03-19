@@ -1,2 +1,5 @@
-authorisation_page_name = "Вход в информационную систему"
-authorisation_page_enter_button_name = "Войти в систему"
+page_name = "Вход в информационную систему"
+enter_button_name = "Войти в систему"
+check_box_fild_name = "Вход для администраторов ПКНД"
+login_placeholder = "Логин"
+password_placeholder = "Пароль"

@@ -10,7 +10,7 @@ class BasePage:
         self.page = page
 
     def open_page(self):  # Функция для открытия страницы
-        self.page.goto(f'{self.base_url}{self.page_url}')
+        self.page.goto(f'{self.base_url}{self.page_url}', timeout=90000)
 
     def find_elem(self, locator):
         return self.page.locator(locator)  # функция поиска элемента по локатору

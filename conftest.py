@@ -1,5 +1,7 @@
 import pytest
 from playwright.sync_api import sync_playwright
+
+from pages.appeals_page.appeals_page import AppealsPage
 from pages.authorisation_page import AuthorisationPage
 from pages.application_page.application_page import ApplicationPage
 from pages.knm_and_pm.knm_adn_pm_page import KnmAndPmPage
@@ -48,3 +50,7 @@ def application_page(page):
 @pytest.fixture
 def knm_and_pm_page(page):
     return KnmAndPmPage(page)
+
+@pytest.fixture
+def appeals_page(page):
+    return AppealsPage(page)
