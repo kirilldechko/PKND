@@ -1,3 +1,4 @@
+"""Страница выбора надзорной деятельности"""
 import allure
 
 from playwright.sync_api import expect
@@ -9,10 +10,10 @@ class ApplicationPage(BasePage):
     page_url = "/select-application"
 
     @allure.step("Выбор надзорной деятельности.")
-    def select_application(self, kno_and_knm_data):
-        found_application = self.find_elem(application_page_loc.application_path(kno_and_knm_data["application_name"]))
+    def select_application(self, application_names):
+        found_application = self.find_elem(application_page_loc.application_path(application_names))
         found_application.click()
         try:
-            expect(self.find_elem(application_page_loc.crumbs_application_name(kno_and_knm_data["application_name"])))
+            expect(self.find_elem(application_page_loc.crumbs_application_name(application_names)))
         except AssertionError:
-            raise AssertionError(f"Не удалось найти вид надзорной деятельности: {kno_and_knm_data["application_name"]}.")
+            raise AssertionError(f"Не удалось найти вид надзорной деятельности: {application_names}.")

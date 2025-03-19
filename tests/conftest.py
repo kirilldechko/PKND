@@ -1,9 +1,14 @@
 import pytest
 from playwright.sync_api import sync_playwright
+
+from pages.appeals_page.appeals_page import AppealsPage
 from pages.authorisation_page.authorisation_page import AuthorisationPage
-from pages.knm_and_pm.knm_adn_pm_page import KnmAndPmPage
+# from pages.knm_and_pm.knm_adn_pm_page import KnmAndPmPage
 from pages.organisation_page.organisation_page import OrganisationPage
 from pages.application_page.application_page import ApplicationPage
+from pages.servises_page.services_page import ServicesPage
+from pages.subject_page.subject_page import SubjectPage
+
 
 
 # Фикстура для настройки контекста браузера (например, размер окна, игнорирование HTTPS-ошибок).
@@ -48,3 +53,15 @@ def application_page(page):
 @pytest.fixture
 def knm_and_pm_page(page):
     return KnmAndPmPage(page)
+
+@pytest.fixture
+def subject_page(page):
+    return SubjectPage(page)
+
+@pytest.fixture
+def appeals_page(page):
+    return AppealsPage(page)
+
+@pytest.fixture
+def service_page(page):
+    return ServicesPage(page)
